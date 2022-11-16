@@ -1,7 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 
 body{
@@ -39,8 +40,7 @@ header h2{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 2em;;
-    height: 100%;
+    padding-top: 2em;
 }
 
 .neumorphism{
@@ -118,12 +118,12 @@ h2:nth-child(4){
 
 footer{
     position: absolute;
-    bottom: 1% ;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 0 2em;
+    bottom: 1%
 }
 
 footer h4 a{
@@ -167,9 +167,8 @@ footer button{
 
     /* main */
 
-    .loading_container{
+    .container .loading_container{
         margin:50px 0;
-        padding: 0;
     }
 
     .neumorphism{
@@ -200,10 +199,11 @@ footer button{
 
     footer{
         padding: 0 11px;
+        bottom: 0.9%;
     }
 
     footer h4 a{
-        font-size: 11px;
+        font-size: 14px;
     }
 
     footer button{
