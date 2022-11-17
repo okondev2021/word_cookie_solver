@@ -9,7 +9,6 @@ urlpatterns = [
     path('Cookieadmin',views.adminpage,name="adminpage"),
 
 
-    # apis
+    # api
     path('getUserInput',views.getUserInput,name="getUserInput"),
-    path('retrieve',views.retrieve,name="retrieve")
 ]

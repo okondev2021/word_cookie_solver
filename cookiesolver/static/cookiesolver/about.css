@@ -131,8 +131,6 @@ body{
     }
 }
 
-
-
 /*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 @media (max-width:650px){
@@ -208,18 +206,12 @@ body{
         font-size: 1rem
     }
 
+}
 
-    
-
-
-
-
-
-
-
-
-
-
+@media (orientation:landscape){
+    #share{
+        padding: 3em 
+    }
 }
 
 

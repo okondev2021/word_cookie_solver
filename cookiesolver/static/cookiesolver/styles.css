@@ -14,7 +14,7 @@ body{
 
 .container{
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* header */
@@ -218,5 +218,11 @@ footer button{
         font-size: 12px;
         padding: 13px 18px;
         cursor: pointer;
+    }
+}
+
+@media (orientation:landscape){
+    .container{
+        min-height: 140vh
     }
 }

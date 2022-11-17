@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',function(){
     }
 
     let word_count = 'All'
-
+    // 
     document.querySelector('select').onchange = function(select){
         word_count = this.value
     }
@@ -41,13 +41,11 @@ document.addEventListener('DOMContentLoaded',function(){
                 // 
                 const input_value = document.querySelector('input')
                 // 
-                sendUserInput(input_value.value.toLowerCase())
-                // 
                 if (word_count == "All"){
-                    retrieveOutput('All')
+                    sendUserInput(input_value.value.toLowerCase(),"All")
                 }
                 else{
-                    retrieveOutput(parseInt(word_count))
+                    sendUserInput(input_value.value.toLowerCase(), parseInt(word_count))
                 }
                 // 
                 setTimeout(popup,5000)
@@ -63,21 +61,18 @@ document.addEventListener('DOMContentLoaded',function(){
     }
     
     // function send user input to django views
-    function sendUserInput(vaue){
+    function sendUserInput(vaule,numb){
         fetch('/getUserInput',{
             method: 'POST',
             body: JSON.stringify({
-                userInput:vaue
+                userInput:vaule
             })
         })
-    }
-
-    // function retrieves possible word that can be formed by the letter entered by the user and appends them to the webpage
-    function retrieveOutput(numb){
-        fetch('/retrieve')
-        .then(response => response.json())
+        .then(response=> response.json())
         .then(data => {
+            // 
             const result_length = Object.keys(data.answer).length
+            // 
             if (result_length > 0){
                 // console.log(data.answer)
                 if (numb == 'All'){
@@ -155,4 +150,5 @@ document.addEventListener('DOMContentLoaded',function(){
             }
         })
     }
+
 })
