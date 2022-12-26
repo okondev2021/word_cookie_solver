@@ -4,7 +4,6 @@ from django.urls import reverse
 import json
 from django.views.decorators.csrf import csrf_exempt
 import itertools
-from .models import FeedBack
 
 # Create your views here.
 def index(request):
@@ -15,20 +14,6 @@ def solution(request):
 
 def about(request):
     return render(request,'cookiesolver/about.html')
-
-def adminpage(request):
-    feedbacks = FeedBack.objects.all()
-    return render(request,'cookiesolver/admin.html',{'feedbacks':feedbacks})
-
-def feedback(request):
-    if request.method == 'POST':
-        user_name = request.POST['username']
-        user_email = request.POST['email']
-        user_message = request.POST['message']
-        feedback = FeedBack.objects.create(Name = user_name,Email = user_email,Message = user_message)
-        feedback.save()
-        return HttpResponseRedirect(reverse('index'))
-    return render(request,'cookiesolver/feedback.html')
 
 @csrf_exempt
 def getUserInput(request):

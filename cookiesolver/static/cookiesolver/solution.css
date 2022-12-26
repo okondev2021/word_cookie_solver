@@ -12,7 +12,7 @@ body{
     background-size: cover;
     min-height: 100vh; 
 }
-rgb
+
 .container{
     background: url('./images/cookie-bg.jpg');
     background-repeat: no-repeat;
@@ -21,6 +21,26 @@ rgb
     position: relative;
     height: 100%;
 }
+
+#feedback{
+    animation: feedback 4s infinite;
+    transition: 0.5s ease-in-out
+}
+
+@keyframes feedback{
+    0%{
+        color:  rgb(124, 84, 4); 
+    }
+
+    50%{
+        color:  rgb(228, 154, 7); 
+    }
+
+    100%{
+        color:  rgb(124, 84, 4); 
+    }
+}
+
 
 .container .top_nav{
     display: flex;
@@ -33,7 +53,6 @@ rgb
     width: 300px;
     height: auto;
 }
-
 
 .container .top_nav div a{
     color: rgba(128, 67, 38, 1);
