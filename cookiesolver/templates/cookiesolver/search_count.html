@@ -19,12 +19,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: color 2s infinite linear;
+            color: white;
+        }
+
+        @keyframes color{
+            0%{
+                background-color: #966f33;
+            }
+
+            50%{
+                background-color: #ba8c63;
+            }
+
+            100%{
+                background-color: #966f33;
+            }
         }
 
         .container h1{
             font-size: clamp(1.4rem, 3rem,4rem);
             font-weight: bold;
-
         }
 
     </style>
