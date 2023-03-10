@@ -1,2 +1,2 @@
-web: gunicorn cookie.wsgi --log-file -
+web: gunicorn cookie.wsgi
 
