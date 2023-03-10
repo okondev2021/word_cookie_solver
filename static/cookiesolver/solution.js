@@ -24,38 +24,33 @@ document.addEventListener('DOMContentLoaded',function(){
 
     // function gets user input save it into a variable and send it to django view to work with through the sendUserInput function
     document.querySelector('button').addEventListener('click',function(){
-
-
-        // increment search count and update db
-        fetch('/incrementSearchCount')
-
+        // 
         const user_input = document.querySelector('input').value
         if(user_input.length > 6 ){
             alert('Input must not be grater than 6 words')
         }
         else{
-            if (word_count > user_input.length){
-                alert(`Word entered must be equal to or greater than ${word_count} letters`)
-            }
-            else{
-                // 
-                document.querySelector('.shadow').style.display = 'block'
-                // 
-                var result_container = document.querySelector('.letters')
-                result_container.innerHTML = " "
-                // 
-                const input_value = document.querySelector('input')
-                // 
-                if (word_count == "All"){
-                    sendUserInput(input_value.value.toLowerCase(),"All")
+            if(word_count !== "All"){
+                if (word_count > user_input.length){
+                    alert(`Word entered must be equal to or greater than ${word_count} letters`)
                 }
                 else{
-                    sendUserInput(input_value.value.toLowerCase(), parseInt(word_count))
-                }
-                // 
-                setTimeout(popup,5000)
+                    // 
+                    var result_container = document.querySelector('.letters')
+                    result_container.innerHTML = ""
+                    // 
+                    document.querySelector('.shadow').style.display = 'block'
+                    // 
+                    const input_value = document.querySelector('input')
+                    // 
+                    sendUserInput(input_value.value.toLowerCase(),word_count)
+                    // 
+                    setTimeout(popup,5000)
+                }    
             }
         }
+        // increment search count and update db
+        fetch('/incrementSearchCount')
     })
 
     // changes cookie pan and shadow diplay,opacity property to none and 0
@@ -68,6 +63,7 @@ document.addEventListener('DOMContentLoaded',function(){
     
     // function send user input to django views
     function sendUserInput(vaule,Number){
+        // 
         fetch('/getUserInput',{
             method: 'POST',
             body: JSON.stringify({
@@ -134,5 +130,5 @@ document.addEventListener('DOMContentLoaded',function(){
         })
         // 
     }
-    // 
+    // END
 })

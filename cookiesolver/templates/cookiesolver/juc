@@ -1,0 +1,8 @@
+                    // 
+                    // if (word_count == "All"){
+                    //     sendUserInput(input_value.value.toLowerCase(),"All")
+                    // }
+                    // else{
+                    //     sendUserInput(input_value.value.toLowerCase(), parseInt(word_count))
+                    // }
+                    // 
